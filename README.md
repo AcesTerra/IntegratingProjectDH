@@ -12,3 +12,6 @@ References:
     https://www.cartier.mx/joyas -> Its organization is similar to the one we proposed in our wireframe.
     https://www.tiffany.com.mx/jewelry/ -> Well organized and simple to navigate.
     https://www.tanyamoss.com/collections/joyeria-total -> Good filters provided for the user, so what the user searchs for can be easily found.
+
+Board:
+    https://trello.com/fullstackdhproject/home
