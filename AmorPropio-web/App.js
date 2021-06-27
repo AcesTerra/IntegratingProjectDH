@@ -3,10 +3,6 @@ const app = express();
 const path = require('path');
 
 app.get('/', function(req,res){
-    res.send("Hello World!")
-});
-
-app.get('/home', function(req,res){
     let Path = path.resolve(__dirname,'./views/home.html')
     res.sendFile(Path)
 });
