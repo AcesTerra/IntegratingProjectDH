@@ -334,6 +334,10 @@ footer p{
         transition: all 1s;
     }
 
+    .cart-info a {
+        text-decoration: none;
+    }
+
     .name-icon{
         display: inline;
         width: 70%;
