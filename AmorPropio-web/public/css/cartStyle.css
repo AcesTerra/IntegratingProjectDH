@@ -25,9 +25,9 @@ a{
     color: #f5f5f5;
 }
 
-/* a:visited{
+a:visited{
     color: #f75050;
-} */
+}
 
 .user-identification, .heart, .nav-menu, .name-icon, .search-bar button{
     display: none;
