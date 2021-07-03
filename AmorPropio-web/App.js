@@ -16,3 +16,7 @@ app.listen(5000,function(req,res){
 app.get('/detail', (req, res) =>{
     res.sendFile(path.resolve(__dirname, './views/detail.html'))
 })
+
+app.get('/cart', (req, res)=> {
+    res.sendFile(path.resolve(__dirname, './views/cart.html'))
+})
