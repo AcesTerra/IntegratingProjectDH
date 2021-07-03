@@ -245,6 +245,10 @@ footer p{
         width: 60%;
     }
 
+    .registration{
+        justify-content: center;
+    }
+
     /* Formulario - register */
     header{
         background-color: #4A494F;
@@ -273,6 +277,7 @@ footer p{
     .user-identification{
         display: flex;
         width: 100%;
+        font-size: 1rem;
     }
 
 
@@ -300,6 +305,10 @@ footer p{
         color: #D4A373;
         font-size: 2rem;
         transition: all 1s;
+    }
+
+    .cart-info a {
+        text-decoration: none;
     }
 
     .name-icon{
