@@ -54,10 +54,24 @@
         </ul>   
     </header>
     <main>
-        <form action="" class="login">
-            <input type="text" name="username" id="username" placeholder="Usuario" class="form_field">
-            <input type="password" name="userpassword" id="userpassword" placeholder="Contraseña" class="form_field">
-            <button type="submit" class="submit_button">Iniciar sesión</button>
+        <form action="" class="registration">
+            <label class="registration_text">Informacion general</label>
+            <input type="text" name="name" id="" placeholder="Ingresa tu nombre" class="form_field">
+            <input type="text" name="username" id="" placeholder="Selecciona tu username" class="form_field">
+            <input type="email" name="email" id="email" placeholder="Ingresa tu correo" class="form_field">
+            <label class="registration_text">Fecha de nacimiento</label>
+            <input type="date" name="date" id="" class="form_field">
+            <input type="text" name="address" id="" placeholder="Ingresa tu dirección" class="form_field">
+            <label class="registration_text">Selecciona una foto de perfil</label>
+            <input type="file" name="profile_picture" id="profile_picture" class="profile_picture">
+            <label class="registration_text">Contraseña</label>
+            <input type="password" name="pwd" id="pwd" placeholder="Ingresa tu contraseña" class="form_field">
+            <input type="password" name="pwdConfirm" id="pwdConfirm" placeholder="Confirma tu contraseña" class="form_field">
+    
+            <button type="submit" class="submit_button">Send</button>
+            <button type="reset" class="reset_info">Clear</button>
+    
+    
         </form>
     </main>
     <footer>
