@@ -134,6 +134,42 @@ nav{
     padding-left: 10px;
 }
 
+/********************* FOOTER ******************/
+
+footer{
+    background-color: #4A494F;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 2rem;
+}
+.footer-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+footer i{
+    margin: 20px;
+    color: #CCD5AE;
+}
+
+.footer-info li{
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
+
+.footer-info li a{
+    text-decoration: none;
+}
+
+footer p{
+    margin: 15px;
+    font-size: .8rem;
+}
+
 /* ***************************** TABLETS *************************************** */
 @media (min-width: 481px)
 {
