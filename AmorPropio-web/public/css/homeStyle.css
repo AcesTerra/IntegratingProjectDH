@@ -1,0 +1,515 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #CCD5AE;
+}
+
+button{
+    cursor: pointer;
+}
+
+main{
+    padding: 25px;
+    margin-top: 128px;
+}
+
+img{
+    width: 85%;
+}
+
+a{
+    color: #f5f5f5;
+}
+
+a:visited{
+    color: #f75050;
+}
+
+.user-identification, .heart, .nav-menu, .name-icon, .search-bar button{
+    display: none;
+}
+
+header{
+    background-color: #4A494F;
+    position: fixed;
+    top: 0;
+    padding: 10px;
+    width: 100%;  
+    z-index: 10;
+}
+
+.logo{
+    display: flex;
+    width: 30%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.main-search{
+    width: 100%;
+    display: flex;
+}
+
+.burger-menu{
+    width: 15%;
+    order: -1;
+    margin: auto;
+    font-size: 2rem;
+    text-align: center;
+    color: #CCD5AE;
+
+}
+
+nav{
+    width: 70%;
+    margin: auto;
+}
+
+.search-bar{
+    position: relative;
+}
+.search-bar input{
+    width: 100%;
+    padding-left: 5px;
+    border-radius: 10px;
+    height: 40px;
+    border: none;
+    outline: none;
+}
+
+.search-bar input:focus{
+    border: 2px solid #D4A373;
+}
+
+.search-bar i{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.3rem;
+    color: #eb6363;
+}
+
+.cart-info{
+    width: 15%;    
+}
+
+.menu-icons.bag{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.menu-icons.bag i{
+    color: #D4A373;
+    font-size: 2.5rem;  
+    width: 100%;
+}
+
+.item-counter{
+    position: absolute;
+    top: 15px;
+    font-size: 1.3rem;
+    color: #4A494F;
+    
+}
+/********************* MAIN ******************/
+
+.slide-section{
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    padding: 15px 15px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 9px 0px;
+}
+
+.slideshow{
+    width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.slides{
+    display: none;
+}
+
+.slides1 img, .slides img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.previous, .next{
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 10px;
+    color: #f5f5f5;
+    background-color: rgb(153, 149, 149);
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 10px;
+    user-select: none;
+    transition: all 1s;
+}
+
+.previous:hover, .next:hover{
+    background-color: #4A494F;
+}
+
+.next{
+    right: 0;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #4A494F;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+
+.section-title{
+    width: 100%;
+    border-bottom: 2px solid #D4A373;
+    
+}
+
+/********************** RECOMENDATION ************************/
+
+.recom-section{
+    padding: 40px 0 0 0;
+}
+
+
+
+.all-recomendations{
+    padding: 30px 25px;
+    /* width: 300%; */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    /* margin: auto; */
+    
+    /* 
+    flex-direction: column;
+    align-content: center; */
+}
+
+.all-recomendations::-webkit-scrollbar{
+    display: none;
+}
+
+.recomendation{
+    width: 70%;
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.recomendation:hover{
+    background-color: #D1C7BE;
+    cursor: pointer;
+    border-radius: 10px;
+    transform: scale(1.1);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.recomendation img{
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.recomendation p{
+    width: 60%;
+    margin-top: 7px;
+    font-size: 20px;
+    text-align: center;
+    color: #4A494F;
+}
+
+.recom-price{
+    font-weight: bolder;
+}
+/********************* FEATURED PRODUCTS ******************/
+
+.featured-products{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product{
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;    
+}
+
+.product-price{
+    color: #f75050;
+}
+
+.product img{
+    border-radius: 10px;
+}
+
+.product p{
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.product:hover{
+    background-color: #D4A373;
+    border-radius: 10px;
+    padding: 15px 15px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 9px 0px;
+}
+
+/********************* FOOTER ******************/
+
+footer{
+    background-color: #4A494F;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 2rem;
+}
+.footer-info{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+footer i{
+    margin: 20px;
+    color: #CCD5AE;
+}
+
+.footer-info li{
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
+
+.footer-info li a{
+    text-decoration: none;
+}
+
+footer p{
+    margin: 15px;
+    font-size: .8rem;
+}
+
+@media (min-width: 481px){
+    header{
+        position: relative;
+    }
+
+    main{
+        margin-top: 0;
+    }
+    /********************* MAIN ******************/
+
+    .slide-section{
+        width: 70%;
+        margin: auto;
+    }
+
+    .product{
+        width: 40%;
+    }
+
+    .recomendation{
+        width: 40%;
+    }
+}
+
+@media (min-width: 769px){
+    header{
+        background-color: #4A494F;
+        padding: 10px 25px 0 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav{
+        margin: 10px;
+        width: 80%;
+    }
+    .logo{
+        width: 15%;
+    }
+
+    .burger-menu{
+        display: none;
+    }
+
+    .main-search{
+        width: 85%;
+    }
+
+    .user-identification{
+        display: flex;
+        width: 100%;
+    }
+
+
+    .search-bar{
+        margin-top: 20px;
+    }
+
+    .cart-info{
+        
+        width: 15%;
+        /* padding: 10px; */
+        margin: auto;
+    }
+
+    .menu-icons{
+        display: flex;
+        justify-content: left;  
+        width: 100%;
+    }
+
+    .menu-icons i, .menu-icons.bag i{
+        margin-bottom: 10px;
+        text-align: left;
+        width: 30%;
+        color: #D4A373;
+        font-size: 2rem;
+        transition: all 1s;
+    }
+
+    .cart-info a {
+        text-decoration: none;
+    }
+    .name-icon{
+        display: inline;
+        width: 70%;
+        color: #D4A373;
+        font-family: 'Corben', cursive;
+        font-size: 1rem;
+        transition: all 1s;
+        text-align: center;
+
+    }
+
+    .item-counter{
+        color: #4A494F;
+        left: 9px;
+        top: 10px;
+    }
+
+    .menu-icons:hover i{
+        color: #CCD5AE;
+        cursor: pointer;
+    }
+
+    .menu-icons:hover .name-icon{
+        color: #CCD5AE;
+        cursor: pointer;
+    }
+    
+    .nav-menu{
+        background-color: #4A494F;
+        border-top: 2px solid #CCD5AE;
+        list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 21px;
+    }
+    .nav-menu li{
+        padding: 10px 15px;
+    }
+    .nav-menu li a{
+        position: relative;
+        text-transform: uppercase;
+        color: #CCD5AE;
+        text-decoration: none;
+    }
+    .nav-menu li a:hover{
+        color: white;
+    }
+
+    .nav-menu li a:hover::after{
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .nav-menu li a::after{
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        top: 100%;
+        left: 0;
+        background: #D4A373;
+        transition: transform 0.5s;
+        transform: scaleX(0);
+        transform-origin: right;
+    }
+
+    /********************* MAIN ******************/
+
+    .slide-section{
+        width: 100%;
+        height: auto;
+    }
+    .slideshow{
+        display: flex;
+        justify-content: space-between;
+    }
+    .slides{   
+        display: inline;
+    }
+    .slides1 , .slides {
+        padding: 10px;
+    }
+
+    .dot{
+        display: none;
+    }
+
+
+    .previous, .next{
+        top: auto;
+        bottom: 12px;
+    }
+
+    .previous{
+        margin-left: 12px;
+    }
+    .next{
+        margin-right: 12px;
+    }
+
+
+    .recomendation{
+        width: 30%;
+    }
+
+    .product{
+        width: 30%;
+    }
+
+
+    
+
+}
