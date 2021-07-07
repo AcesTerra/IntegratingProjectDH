@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,13 @@
     <script src="https://kit.fontawesome.com/44355dc707.js" crossorigin="anonymous"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/homeStyle.css">
-    <title>Inicio Amor Propio</title>
+    <link rel="stylesheet" href="css/detailStyle.css">
+    <title>Detalle producto</title>
 </head>
+
 <body>
     <header>
+
         <img src="images/testImage.jpg" alt="" class="logo">
         <div class="main-search">
             <nav>
@@ -54,31 +57,49 @@
             <li><a href="#">Mi cuenta</a></li>
         </ul>
     </header>
-
     <main>
-        <section class="slide-section">
-            <div class="slideshow">
-                <div class="slides1">
-                    <img src="images/home1.jpg" alt="">
+        <section class="detail-item">
+            <div class="left-images">
+
+                <img src="images/arete1.jpg" alt="" class="big-image">
+                <!-- <div class="main-image">
+                    <button class="image-slider"><</button>
+                    <button class="image-slider1">></button>
+                </div> -->
+
+                <div class="under-images">
+                    <img src="images/arete1.jpg" alt="">
+                    <img src="images/arete2.jpg" alt="">
+                    <img src="images/arete3.jpg" alt="">
+                    <img src="images/arete4.jpg" alt="">
                 </div>
-                <div class="slides">
-                    <img src="images/home2.jpg" alt="">
-                </div>
-                <div class="slides">
-                    <img src="images/home3.jpg" alt="">
-                </div>
-    
-                <span class="previous">&#10094;</span>
-                <span  class="next">&#10095;</span>
             </div>
-            <div style="text-align:center">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-              </div>
+            <div class="right-info">
+                <p class="item-name">Pendientes de arcilla de polímero verde salvia</p>
+                <h3>Descripcion</h3>
+                <p class="item-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe ducimus,
+                    aliquam nihil quos ut sunt tempore magni quam veniam voluptates consequuntur</p>
+                <p class="item-price">$xx.xx</p>
+                <div class="item-specs">
+                    <h3>Selecciona color</h3>
+                    <select name="" id="" class="color-select">
+                        <option value="verde">Verde</option>
+                    </select>
+                </div>
+                <div class="item-specs">
+                    <h3>Cantidad</h3>
+                    <select name="" id="" class="quantity-select">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+                <button class="add-button" type="submit">Agregar al carrito</button>
+            </div>
         </section>
         <section class="recom-section">
-            <h1 class="section-title">Recomendaciones</h1>
+            <h1 class="recom-title">Recomendaciones</h1>
             <div class="all-recomendations">
                 <div class="recomendation">
                     <img src="images/recom1.jpg" alt="">
@@ -107,42 +128,7 @@
                 </div>
             </div>
         </section>
-        <section class="featured-products">
-            <h1 class="section-title">Productos destacados</h1>
-            <div class="product">
-                <img src="images/home4.jpg" alt="">
-                <p>Pendientes de polilla azul</p>
-                <p class="product-price">MXN $1252.40</p>
-            </div>
-            <div class="product">
-                <img src="images/home5.jpg" alt="">
-                <p>Pendientes largos de borla</p>
-                <p class="product-price">MXN $553.24</p>
-            </div>
-            <div class="product">
-                <img src="images/home2.jpg" alt="">
-                <p>Pendientes Arcoiris</p>
-                <p class="product-price">MXN $372.21</p>
-            </div>
-            <div class="product">
-                <img src="images/home6.jpg" alt="">
-                <p>Pendientes serpiente arcilla</p>
-                <p class="product-price">MXN $868.49</p>
-            </div>
-            <div class="product">
-                <img src="images/home7.jpg" alt="">
-                <p>Pendientes de macrame</p>
-                <p class="product-price">MXN $446.65</p>
-            </div>
-            <div class="product">
-                <img src="images/home3.jpg" alt="">
-                <p>Pendientes cadena salvia verde</p>
-                <p class="product-price">MXN $1127.32</p>
-            </div>
-        </section>
-
     </main>
-
     <footer>
         <i class="fab fa-facebook-f"></i>
         <i class="fab fa-twitter"></i>
@@ -154,6 +140,7 @@
         <p>Amor Propio © 2021</p>
 
     </footer>
-    
+
 </body>
+
 </html>
