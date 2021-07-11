@@ -4,6 +4,7 @@
   "description": "This is the final project for Full Stack Web Development course from Digital House. Our project consists in creating a webpage for a jewerly store. The products to be offered are earings, neckless, rings, jewerly, etc. Our tarjet customer are women, who like to wear accesories, which make them look prettier.",
   "main": "App.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
