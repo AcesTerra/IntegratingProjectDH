@@ -11,6 +11,8 @@ const mainRouter = require("./routers/mainRouter")
 const PORT = process.env.PORT || 8080
 
 app.use(express.static('./public')) // Define que las busquedas siempre iniciara en public 
+app.set("view engine", "ejs")
+//app.set("views", "./views")
 
 app.use(mainRouter)
 
