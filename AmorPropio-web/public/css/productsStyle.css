@@ -117,145 +117,13 @@ nav{
     color: #4A494F;
     
 }
-/********************* MAIN ******************/
 
-.slide-section{
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    padding: 15px 15px 5px 15px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 9px 0px;
-}
-
-.slideshow{
-    width: 100%;
-    position: relative;
-    margin: auto;
-}
-
-.slides{
-    display: none;
-}
-
-.slides1 img, .slides img{
-    width: 100%;
-    border-radius: 10px;
-}
-
-.previous, .next{
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 10px;
-    color: #f5f5f5;
-    background-color: rgb(153, 149, 149);
-    font-weight: bold;
-    font-size: 1.3rem;
-    font-weight: bold;
-    border-radius: 10px;
-    user-select: none;
-    transition: all 1s;
-}
-
-.previous:hover, .next:hover{
-    background-color: #4A494F;
-}
-
-.next{
-    right: 0;
-}
-
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #4A494F;
-    border-radius: 50%;
-    display: inline-block;
-  }
-
-
+/********************* FEATURED PRODUCTS ******************/
 .section-title{
     width: 100%;
     border-bottom: 2px solid #D4A373;
     
 }
-
-/********************** RECOMENDATION ************************/
-
-.recom-section{
-    padding: 40px 0 0 0;
-}
-
-
-
-.all-recomendations{
-    padding: 30px 25px;
-    /* width: 300%; */
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    /* margin: auto; */
-    
-    /* 
-    flex-direction: column;
-    align-content: center; */
-}
-
-.all-recomendations::-webkit-scrollbar{
-    display: none;
-}
-
-.recomendation {
-    flex: 0 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    padding-top: 15px;
-    align-content: center;
-    cursor: pointer;
-}
-
-.recomendation a{
-    text-align: center;
-    text-decoration: none;
-}
-
-.recomendation:hover{
-    background-color: #D1C7BE;
-    cursor: pointer;
-    border-radius: 10px;
-    transform: scale(1.1);
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-}
-
-.recomendation a img{
-    width: 80%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-
-}
-
-.recomendation p{
-    margin-top: 7px;
-    font-size: 20px;
-}
-
-.recom-name{
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    color: #4A494F;
-}
-
-.recom-price{
-    font-weight: bolder;
-    color: #f75050;
-}
-/********************* FEATURED PRODUCTS ******************/
-
 .featured-products{
     width: 100%;
     display: flex;
@@ -269,6 +137,11 @@ nav{
     text-align: center;    
 }
 
+.product a {
+    text-decoration: none;
+    color: black;
+}
+
 .product-price{
     color: #f75050;
 }
@@ -280,16 +153,10 @@ nav{
 .product p{
     margin-top: 5px;
     font-weight: bold;
-
-}
-
-.product a {
-    color: black;
-    text-decoration: none;
 }
 
 .product:hover{
-    background-color: #D4A373;
+    background-color: rgb(221, 221, 221);
     border-radius: 10px;
     padding: 15px 15px 5px 15px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 9px 0px;
@@ -339,18 +206,9 @@ footer p{
     main{
         margin-top: 0;
     }
-    /********************* MAIN ******************/
 
-    .slide-section{
-        width: 70%;
-        margin: auto;
-    }
-
+    /********************* FEATURED PRODUCTS ******************/
     .product{
-        width: 40%;
-    }
-
-    .recomendation{
         width: 40%;
     }
 }
@@ -482,50 +340,10 @@ footer p{
         transform-origin: right;
     }
 
-    /********************* MAIN ******************/
-
-    .slide-section{
-        width: 100%;
-        height: auto;
-    }
-    .slideshow{
-        display: flex;
-        justify-content: space-between;
-    }
-    .slides{   
-        display: inline;
-    }
-    .slides1 , .slides {
-        padding: 10px;
-    }
-
-    .dot{
-        display: none;
-    }
-
-
-    .previous, .next{
-        top: auto;
-        bottom: 12px;
-    }
-
-    .previous{
-        margin-left: 12px;
-    }
-    .next{
-        margin-right: 12px;
-    }
-
-
-    .recomendation{
-        width: 30%;
-    }
+/********************* FEATURED PRODUCTS ******************/
 
     .product{
         width: 30%;
     }
-
-
-    
 
 }
