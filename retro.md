@@ -25,3 +25,11 @@ In retrospective, we think we can work in:
     2. Punctuality: All the members of the team should arrive on time.
     3. Avoid delays: We were able to finish on time. However is important to end things 
        as soon as posible to avoid delays in work of others.
+
+
+************************** RETROSPECTIVE 3RD SPRINT *********************************
+
+We ended third sprints and AmorPropio web page looks really good. It is important to define
+definitive colors so the web page looks more atractive to all users.
+
+Keep the hard work during next sprint!
