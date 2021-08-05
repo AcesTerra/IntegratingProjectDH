@@ -33,3 +33,12 @@ We ended third sprints and AmorPropio web page looks really good. It is importan
 definitive colors so the web page looks more atractive to all users.
 
 Keep the hard work during next sprint!
+
+************************** RETROSPECTIVE 4TH SPRINT *********************************
+
+Work is going really well. We adjust our times and prioritized the task and we were able to deliver
+sprint 4 on time.
+
+    1. We will work on a single branch so everyone can see the commits.
+    2. We will commit more often to register our changes.
+    3. We will work to be in sync with Playground classes.
