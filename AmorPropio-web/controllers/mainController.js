@@ -2,10 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 const productsPath = path.join(__dirname, '../data/testProducts.json')
-const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'))
+
 
 const controller = {
     home: (req,res) => {
+        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'))
         const slides = products.filter(p => p.category === "home")
         const recomendations = products.filter(p => p.category === "recomendations")
         const featured = products.filter(p => p.category === "destacados")
