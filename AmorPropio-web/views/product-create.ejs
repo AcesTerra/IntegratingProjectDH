@@ -13,7 +13,7 @@
       href="https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/productsStyle.css" />
+    <link rel="stylesheet" href="/css/editProduct.css" />
     <title>Creacion Producto</title>
   </head>
   <body>
@@ -25,15 +25,13 @@
           action="/products/"
           method="POST"
           enctype="multipart/form-data"
+          class="edit-form"
         >
           <div class="product-info">
             <label for="name">Nombre Producto:</label>
             <input type="text" name="name"  />
           </div>
-          <div class="product-info">
-            <label for="price">Precio del producto:</label>
-            <input type="text" name="price"  />
-          </div>
+
           <div class="product-info">
             <label for="category">Categoria:</label>
             <select name="category" id="category">
@@ -41,8 +39,21 @@
               <option value="home">Inicio</option>
               <option value="recomendations">Recomendados</option>
               <option value="destacados">Destacados</option>
-            </select>
+            </select
+            >
           </div>
+
+          <div class="product-info">
+            <label for="price">Colores:</label>
+          <input type="text" name="colors" />
+          </div>
+
+
+          <div class="product-info">
+            <label for="price">Precio del producto:</label>
+            <input type="text" name="price"  />
+          </div>
+          
           <div class="product-info">
             <label for="image">Agregar imagen:</label>
             <input
@@ -56,9 +67,8 @@
             <label for="desc">Descripcion:</label>
             <textarea name="description" id="description"></textarea>
           </div>
-          <div class="product-info">
-            <button type="submit">Guardar Producto</button>
-          </div>
+          <button type="submit" class="save-button">Guardar Producto</button>
+
         </form>
       </div>
     </main>
