@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/44355dc707.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/productsStyle.css" />
+    <title>Todos Productos Amor Propio</title>
+  </head>
+
+  <body>
+    <%- include("partials/header") %>
+    <main>
+      <section class="featured-products">
+        <h1 class="section-title">Todos nuestros productos</h1>
+        <% allProducts.forEach(product=>{ %>
+        <div class="product">
+          <a href="/products/<%= product.id %>">
+            <img src="images/<%= product.image %>" alt="" />
+            <p><%= product.name %></p>
+            <p class="product-price">MXN $<%= product.price %></p>
+          </a>
+        </div>
+        <% })%>
+      </section>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>

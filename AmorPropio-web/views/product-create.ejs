@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/44355dc707.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/editProduct.css" />
+    <title>Creacion Producto</title>
+  </head>
+  <body>
+    <%- include("partials/header") %>
+    <main>
+      <div class="edit-product">
+        <h1>Creacion producto</h1>
+        <form
+          action="/products/"
+          method="POST"
+          enctype="multipart/form-data"
+          class="edit-form"
+        >
+          <div class="product-info">
+            <label for="name">Nombre Producto:</label>
+            <input type="text" name="name"  />
+          </div>
+
+          <div class="product-info">
+            <label for="category">Categoria:</label>
+            <select name="category" id="category">
+              <option value="">Elige</option>
+              <option value="home">Inicio</option>
+              <option value="recomendations">Recomendados</option>
+              <option value="destacados">Destacados</option>
+            </select
+            >
+          </div>
+
+          <div class="product-info">
+            <label for="price">Colores:</label>
+          <input type="text" name="colors" />
+          </div>
+
+
+          <div class="product-info">
+            <label for="price">Precio del producto:</label>
+            <input type="text" name="price"  />
+          </div>
+          
+          <div class="product-info">
+            <label for="image">Agregar imagen:</label>
+            <input
+              type="file"
+              name="image"
+              id="image"
+              accept="image/png, image/jpeg"
+            />
+          </div>
+          <div class="product-info">
+            <label for="desc">Descripcion:</label>
+            <textarea name="description" id="description"></textarea>
+          </div>
+          <button type="submit" class="save-button">Guardar Producto</button>
+
+        </form>
+      </div>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>

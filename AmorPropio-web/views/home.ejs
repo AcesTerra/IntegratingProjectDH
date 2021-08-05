@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/44355dc707.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/homeStyle.css" />
+    <title>Inicio Amor Propio</title>
+  </head>
+
+  <body>
+    <%- include("partials/header") %>
+
+    <main>
+      <section class="slide-section">
+        <div class="slideshow">
+          <% slides.forEach(product=> { %>
+          <div class="slides">
+            <a href="products/<%= product.id %>">
+              <img src="images/<%= product.image %>" alt="" />
+            </a>
+          </div>
+          <% }) %>
+
+          <span class="previous">&#10094;</span>
+          <span class="next">&#10095;</span>
+        </div>
+        <div style="text-align: center">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </section>
+      <section class="recom-section">
+        <h1 class="section-title">Recomendaciones</h1>
+        <div class="all-recomendations">
+          <% recomendations.forEach(product=>{ %>
+
+          <div class="recomendation">
+            <a href="/products/<%= product.id %>">
+              <img src="images/<%= product.image %>" alt="" />
+              <p class="recom-name"><%= product.name %></p>
+
+              <p class="recom-price">MXN $<%= product.price %></p>
+            </a>
+          </div>
+          <% }) %>
+        </div>
+      </section>
+      <section class="featured-products">
+        <h1 class="section-title">Productos destacados</h1>
+        <% featured.forEach(product=> { %>
+
+        <div class="product">
+          <a href="/products/<%= product.id %>">
+            <img src="images/<%= product.image %>" alt="" />
+            <p><%= product.name %></p>
+            <p class="product-price">MXN $<%= product.price %></p>
+          </a>
+        </div>
+        <% }) %>
+      </section>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>

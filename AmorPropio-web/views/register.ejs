@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/44355dc707.js" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/registerStyle.css">
+    <title>Registrate</title>
+</head>
+<body>
+    <%- include("partials/header") %>
+    <main>
+        <form action="" class="registration">
+            <label class="registration_text">Informacion general</label>
+            <input type="text" name="name" id="" placeholder="Ingresa tu nombre" class="form_field">
+            <input type="text" name="username" id="" placeholder="Selecciona tu username" class="form_field">
+            <input type="email" name="email" id="email" placeholder="Ingresa tu correo" class="form_field">
+            <label class="registration_text">Fecha de nacimiento</label>
+            <input type="date" name="date" id="" class="form_field">
+            <input type="text" name="address" id="" placeholder="Ingresa tu dirección" class="form_field">
+            <label class="registration_text">Selecciona una foto de perfil</label>
+            <input type="file" name="profile_picture" id="profile_picture" class="profile_picture">
+            <label class="registration_text">Contraseña</label>
+            <input type="password" name="pwd" id="pwd" placeholder="Ingresa tu contraseña" class="form_field">
+            <input type="password" name="pwdConfirm" id="pwdConfirm" placeholder="Confirma tu contraseña" class="form_field">
+    
+            <button type="submit" class="submit_button">Enviar</button>
+    
+    
+        </form>
+    </main>
+    <%- include("partials/footer") %>
+    
+</body>
+</html>
