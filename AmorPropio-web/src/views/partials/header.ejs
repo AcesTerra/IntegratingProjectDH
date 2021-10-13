@@ -6,7 +6,12 @@
             <div class="nav-bar">
                 <div class="user-identification">
                     <i class="fas fa-user"></i>
-                    <p>¡Hola bienvenido! <a href="/login">Inicia Sesion</a> o <a href="/register">Registrate</a></p>
+                    <% if(locals.user){ %>
+                    <p>¡Bienvenid@ <%= user.name%>! <a href="/user/register">Cerrar Sesion</a> </p>
+                    <% } else { %>
+                    <p>¡Hola bienvenido! <a href="/user/login">Inicia Sesion</a> o <a href="/user/register">Registrate</a></p>
+
+                    <% } %>
                 </div>
                 <div class="search-bar">
                     <input type="text" placeholder="Buscar productos">

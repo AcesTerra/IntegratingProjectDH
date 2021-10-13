@@ -158,6 +158,12 @@ nav{
 .form_field::placeholder{
     padding-left: 10px;
 }
+.feedback{
+    /* width: 45%; */
+    text-align: left;
+    max-height: 20px;
+    color: red;
+}
 
 /********************* FOOTER ******************/
 

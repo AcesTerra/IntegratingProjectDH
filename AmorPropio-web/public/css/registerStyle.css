@@ -173,6 +173,13 @@ nav{
     cursor: pointer;
 }
 
+.feedback{
+    /* width: 45%; */
+    text-align: left;
+    max-height: 20px;
+    color: red;
+}
+
 /********************* FOOTER ******************/
 
 footer{
@@ -221,10 +228,19 @@ footer p{
     main{
         margin-top: 0;
     }
+
+    .registration{
+        flex-direction: column;
+    }
+
+    .registration_text{
+        margin-left: auto;
+        margin-right: auto;
+    }
      .user-type,   .interests{
         width: 80%;
     }
-    .form_field, .registration_text, .profile_picture, .reset_info, .submit_button{
+    .form_fields, .profile_picture, .reset_info, .submit_button{
         width: 80%;
     }
 
@@ -242,7 +258,7 @@ footer p{
     }
 
     .form_field, .registration_text, .profile_picture, .reset_info, .submit_button{
-        width: 60%;
+        /* width: 60%; */
     }
 
     .registration{

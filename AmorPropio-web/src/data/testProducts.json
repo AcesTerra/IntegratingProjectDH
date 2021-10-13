@@ -5,7 +5,7 @@
     "image": "home1.jpg",
     "category": "home",
     "colors": "red",
-    "price": 1257.65,
+    "price": 1285.65,
     "moreImages": [],
     "description": "test"
   },
@@ -140,6 +140,16 @@
     "category": "recomendations",
     "colors": "red",
     "price": 535.12,
+    "moreImages": []
+  },
+  {
+    "name": "Exo Systems",
+    "category": "recomendations",
+    "colors": "red",
+    "price": 8888,
+    "description": "test",
+    "id": 1634084551863,
+    "image": "img-logo-exo-01.png",
     "moreImages": []
   }
 ]
