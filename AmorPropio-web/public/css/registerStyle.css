@@ -138,6 +138,10 @@ nav{
     outline: none;
 }
 
+input{
+    padding-left: 10px;
+}
+
 .form_field::placeholder{
     padding-left: 10px;
 }

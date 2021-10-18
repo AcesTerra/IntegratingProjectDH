@@ -4,9 +4,8 @@
   "description": "This is the final project for Full Stack Web Development course from Digital House. Our project consists in creating a webpage for a jewerly store. The products to be offered are earings, neckless, rings, jewerly, etc. Our tarjet customer are women, who like to wear accesories, which make them look prettier.",
   "main": "App.js",
   "scripts": {
-    "start": "nodemon ./src/App.js",
-    "dev": "nodemon ./src/App.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/App.js",
+    "test": "nodemon ./src/App.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +24,9 @@
     "express-session": "^1.17.2",
     "express-validator": "^6.12.1",
     "method-override": "^3.0.0",
-    "multer": "^1.4.2"
+    "multer": "^1.4.2",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.7.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.13"

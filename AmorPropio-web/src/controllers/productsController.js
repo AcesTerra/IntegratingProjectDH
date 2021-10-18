@@ -1,87 +1,119 @@
 // ************ Require's ************
 const fs = require("fs");
 const path = require("path");
-
-const productsPath = path.join(__dirname, "../data/testProducts.json");
-const products = JSON.parse(fs.readFileSync(productsPath, "utf-8"));
-
+const db = require('../database/models');
+const { validationResult} = require("express-validator");
 const controller = {
   all: (req, res) => {
-    res.render("products", {
-      allProducts: products,
-    });
+    db.Products.findAll({
+      include: [{association: 'category'}]
+    })
+    .then(allProducts => {
+      res.render('products', {allProducts})
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+
   },
   create: (req, res) => {
     res.render("product-create");
   },
   store: (req, res) => {
-    let newProduct = req.body;
-		let img = req.file
-		newProduct.id = Date.now()
-    newProduct.price = parseFloat(newProduct.price)
-		newProduct.image= img.filename
-    newProduct.moreImages = []
+    let errors = validationResult(req);
+        if (errors.isEmpty()) {
+          db.Products.count()
+          .then(c => {
+            db.Products.create({
+              id: c+1,
+              name: req.body.name, 
+              description: req.body.description,
+              image: req.file.filename,
+              colors: req.body.colors,
+              price: parseFloat(req.body.price),
+              id_user: req.session.userLogged.id,
+              id_category: parseInt(req.body.category)
+            })
+            .catch(error=>{
+              console.log(error)
+            })
+            res.redirect('/products')
+          })
+        }
+        else{
+        console.log(errors)
+          
+          return res.render('product-create', {
+            errors: errors.mapped(),
+            old: req.body
+        })
+        }
 
-		// Saves new added product to JSON file
-		products.push(newProduct)
-		const productsJSON = JSON.stringify(products, null, 2)
-		fs.writeFileSync(productsPath, productsJSON)
-
-		res.redirect('/products')
+    
   },
   detail: (req, res) => {
     const id = parseInt(req.params.id, 10);
-    const product = products.find((p) => p.id === id);
 
-    const recomendations = products.filter(
-      (p) => p.category === "recomendations"
-    );
-    res.render("detail", {
-      product: product,
-      recomendations: recomendations,
-    });
+    db.Products.findAll()
+      .then(products =>{
+        recomendations = products.filter(p => p.id_category == 3)
+        product = products.find(p => p.id == id)
+        res.render("detail", {
+          product,
+          recomendations
+        });
+      })
+      .catch(error => console.log(error))
   },
   edit: (req, res) => {
     const id = parseInt(req.params.id, 10);
-    const product = products.find((p) => p.id === id);
-    res.render("product-edit", { product: product });
+    db.Products.findByPk(id)
+      .then(product => {
+        res.render("product-edit", {product});
+      })
   },
   update: (req, res) => {
-    let newData = req.body;
-    const id = parseInt(req.params.id, 10);
-    const newImage = req.file;
-    let updateProduct = products.find((p) => p.id === id);
+    let errors = validationResult(req);
+    if (errors.isEmpty()){
+      db.Products.update({
+        id: req.params.id,
+        name: req.body.name, 
+        description: req.body.description,
+        image: req.file.filename,
+        colors: req.body.colors,
+        price: parseFloat(req.body.price),
+        id_user: req.session.userLogged.id,
+        id_category: parseInt(req.body.category)
+      }, {
+        where:{
+          id: req.params.id
+        }
+      })
+      res.redirect("/");
 
-    updateProduct.name = newData.name != "" ? newData.name : updateProduct.name;
-    updateProduct.price = parseFloat(
-      newData.price != "" ? newData.price : updateProduct.price
-    );
-    updateProduct.category =
-      newData.category != "" ? newData.category : updateProduct.category;
-    updateProduct.description =
-      newData.description != ""
-        ? newData.description
-        : updateProduct.description;
-    updateProduct.image =
-      newImage !== undefined && newImage.filename != updateProduct.image
-        ? newImage.filename
-        : updateProduct.image;
+    }
+    else{
 
-    // Saves new added product to JSON file
-    const productsJSON = JSON.stringify(products, null, 2);
-    fs.writeFileSync(productsPath, productsJSON);
-    res.redirect("/products/" + id);
+      return res.render('product-edit', {
+        errors: errors.mapped(),
+        old: req.body
+    })
+  }
   },
   destroy: (req, res) => {
     const id = parseInt(req.params.id, 10);
-    const productIndex = products.findIndex((p) => p.id === id);
-    
-    
-    // Saves new added product to JSON file
-		products.splice(productIndex, 1)
-		const productsJSON = JSON.stringify(products, null, 2)
-		fs.writeFileSync(productsPath, productsJSON)
-
+    db.Products.findByPk(id)
+      .then(product => {
+        console.log(product.image)
+        const pathImages = path.join(__dirname,'../../public/images/', product.image)
+        fs.unlinkSync(pathImages)
+      })
+      .catch(error => console.log(error))
+      .then(db.Products.destroy({
+        where:{
+          id: id
+        }
+      }))
 		res.redirect('/products')
   },
 };

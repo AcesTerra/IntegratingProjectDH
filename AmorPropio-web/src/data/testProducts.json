@@ -61,7 +61,7 @@
   {
     "id": 7,
     "name": "Pendientes de arcoiris",
-    "description": "desc",
+    "description": "Lorem ipsum dolor sit amet consectetur",
     "image": "home2.jpg",
     "category": "home",
     "colors": "red",
@@ -143,13 +143,13 @@
     "moreImages": []
   },
   {
-    "name": "Exo Systems",
-    "category": "recomendations",
-    "colors": "red",
-    "price": 8888,
-    "description": "test",
-    "id": 1634084551863,
+    "id": 1634513946142,
+    "name": "Test",
+    "description": "Test description",
     "image": "img-logo-exo-01.png",
+    "category": "recomendations",
+    "colors": "Verde",
+    "price": 6666,
     "moreImages": []
   }
 ]

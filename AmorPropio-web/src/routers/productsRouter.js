@@ -4,8 +4,11 @@ const path = require('path');
 const multer  = require('multer');
 const router = express.Router();
 
-// ************ Controller Require ************
+// ************ Controller and ValidatorRequire ************
 const productsController = require('../controllers/productsController');
+const productValidator = require('../middlewares/productValidator')
+const authMiddleware = require('../middlewares/authMiddleware')
+
 // ************ Multer Storage ************
 var storage = multer.diskStorage({
 	destination: (req, file, cb)=>{
@@ -18,21 +21,31 @@ var storage = multer.diskStorage({
 })
 
 
-var upload = multer({storage: storage})
+var upload = multer({
+	storage: storage,
+	fileFilter: (req, file, cb) => {
+	  if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
+		cb(null, true);
+	  } else {
+		cb(null, false);
+		return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
+	  }
+	}
+  });
 
 /*** GET ALL PRODUCT ***/ 
 router.get('/', productsController.all);
 
 /*** CREATE ONE PRODUCT ***/
-router.get('/create', productsController.create);
-router.post('/', upload.single("image"), productsController.store)
+router.get('/create', authMiddleware,productsController.create);
+router.post('/', upload.single("image"), productValidator,productsController.store)
 
 /*** GET ONE PRODUCT ***/ 
 router.get('/:id', productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/
 router.get('/edit/:id', productsController.edit);
-router.put('/:id', upload.single("image") ,productsController.update);
+router.put('/:id', upload.single("image"), productValidator ,productsController.update);
 
 /*** DELETE ONE PRODUCT ***/
 router.delete('/:id', productsController.destroy)

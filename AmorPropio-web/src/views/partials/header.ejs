@@ -7,17 +7,20 @@
                 <div class="user-identification">
                     <i class="fas fa-user"></i>
                     <% if(locals.user){ %>
-                    <p>¡Bienvenid@ <%= user.name%>! <a href="/user/register">Cerrar Sesion</a> </p>
+                    <p>¡Bienvenid@ <%= user.name%>! <a href="/user/logout">Cerrar Sesion</a> </p>
                     <% } else { %>
                     <p>¡Hola bienvenido! <a href="/user/login">Inicia Sesion</a> o <a href="/user/register">Registrate</a></p>
 
                     <% } %>
                 </div>
-                <div class="search-bar">
-                    <input type="text" placeholder="Buscar productos">
-                    <i class="fas fa-search"></i>
-                    <button type="submit">Buscar</button>
-                </div>
+                <form action="/search" method="post">
+                    <div class="search-bar">
+                        <input type="text" name="find" placeholder="Buscar productos por ID">
+                        <i class="fas fa-search"></i>
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+                
 
             </div>
         </nav>
@@ -43,8 +46,8 @@
         <li><a href="/">Inicio</a></li>
         <li><a href="/products">Productos</a></li>
         <li><a href="/products/create">Vender</a></li>
-        <li><a href="#">Estilos</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Mi cuenta</a></li>
+        <!-- <li><a href="#">Estilos</a></li>
+        <li><a href="#">Nosotros</a></li> -->
+        <li><a href="/user/profile">Mi cuenta</a></li>
     </ul>
 </header>

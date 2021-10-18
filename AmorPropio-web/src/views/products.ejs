@@ -27,6 +27,7 @@
           <a href="/products/<%= product.id %>">
             <img src="images/<%= product.image %>" alt="" />
             <p><%= product.name %></p>
+            <p class="product-price"><%= product.category.name %></p>
             <p class="product-price">MXN $<%= product.price %></p>
           </a>
         </div>

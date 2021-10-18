@@ -1,24 +1,35 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsPath = path.join(__dirname, '../data/testProducts.json')
-
+const fs = require("fs");
+const path = require("path");
+const db = require("../database/models");
 
 const controller = {
-    home: (req,res) => {
-        const products = JSON.parse(fs.readFileSync(productsPath, 'utf-8'))
-        const slides = products.filter(p => p.category === "home")
-        const recomendations = products.filter(p => p.category === "recomendations")
-        const featured = products.filter(p => p.category === "destacados")
-        res.render('home',{
-            slides: slides,
-            recomendations: recomendations,
-            featured: featured
-        });
-    },
-    cart: (req, res) => {
-        res.render('cart')
-    }
-}
+  home: (req, res) => {
+    db.Products.findAll().then((products) => {
+      slides = products.filter((p) => p.id_category == 1);
+      featured = products.filter((p) => p.id_category == 2);
+      recomendations = products.filter((p) => p.id_category == 3);
+      res.render("home", {
+        slides,
+        featured,
+        recomendations
+      });
+    });
+  },
+  cart: (req, res) => {
+    res.render("cart");
+  },
+  search: (req, res) => {
+    const id = parseInt(req.body.find, 10);
+    db.Products.findAll()
+    .then((products) => {
+      recomendations = products.filter((p) => p.id_category == 3);
+      product = products.find((p) => p.id == id);
+      res.render("detail", {
+        product,
+        recomendations,
+      });
+    });
+  },
+};
 
-module.exports = controller
+module.exports = controller;
