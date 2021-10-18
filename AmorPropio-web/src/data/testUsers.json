@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Ana",
+    "last_name": "González",
+    "email": "ana.gonzb@gmail.com",
+    "password": "jcmd918A",
+    "category": "client",
+    "image": "None"
+  },
+  {
+    "id": 2,
+    "name": "Sofia",
+    "last_name": "Perez",
+    "email": "sof2_pery@yahoo.com.mx",
+    "password": "124jci2",
+    "category": "client",
+    "image": "None"
+  },
+  {
+    "id": 3,
+    "name": "Jeraldine",
+    "last_name": "Robles",
+    "email": "pink_jeraldine@outlook.com",
+    "password": "eijc81",
+    "category": "client",
+    "image": "None"
+  },
+  {
+    "id": 4,
+    "name": "Juan",
+    "last_name": "Medina",
+    "email": "magoMedJuan@gmail.com",
+    "password": "0987654321",
+    "category": "client",
+    "image": "None"
+  },
+  {
+    "id": 5,
+    "name": "Tomas",
+    "last_name": "Alcantara",
+    "email": "thisGuy12@gmail.com",
+    "password": "'07894uigfkldf",
+    "category": "client",
+    "image": "None"
+  },
+  {
+    "id": 6,
+    "name": "Monserrat",
+    "last_name": "Juarez",
+    "email": "juarez_monst_312@hotmail.com",
+    "password": "menx0ijqen",
+    "category": "client",
+    "image": "None"
+  },
+  {
+    "id": 7,
+    "name": "Nicolas",
+    "last_name": "González",
+    "email": "elBuenNico@gmail.com",
+    "password": "mkobhucftzse4",
+    "category": "client",
+    "image": "None"
+  },
+  {
+    "id": 8,
+    "name": "Regina",
+    "last_name": "Escutia",
+    "email": "mermelada_regi@gmail.com",
+    "password": "1234567890*",
+    "category": "client",
+    "image": "None"
+  },
+  {
+    "id": 9,
+    "name": "Joyeria",
+    "last_name": "Oro",
+    "email": "contacto@oro.com",
+    "password": "iejnvapfe3",
+    "category": "provider",
+    "image": "None"
+  },
+  {
+    "id": 13,
+    "name": "Leonardo",
+    "last_name": "Villarreal Martin del Campo",
+    "email": "leonardovmdc@gmail.com",
+    "password": "$2a$10$ny0YcWCvCsSnaXZLAV2DNuw6PiWkZR8zPJdiZV1DO5Dfmmhx/UYO2",
+    "category": "client",
+    "img": "img-dross.png"
+  },
+  {
+    "id": 14,
+    "name": "Jacquelyne",
+    "last_name": "Gomez Castillo",
+    "email": "jackiegomez@gmail.com",
+    "password": "$2a$10$Z.Uj7c4Wdg/OUWKv2o0NbuVmlscL4itvrwzlkuadHgcxxP6kENNyu",
+    "category": "client",
+    "img": "img-captura-de pantalla 2020-11-09 134206.png"
+  }
+]

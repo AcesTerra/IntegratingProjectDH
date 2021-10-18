@@ -117,7 +117,12 @@ nav{
     color: #4A494F;
     
 }
-
+.feedback{
+    /* width: 45%; */
+    text-align: left;
+    max-height: 20px;
+    color: red;
+}
 /********************* MAIN ******************/
 .edit-product{
     text-align: center;
@@ -136,6 +141,10 @@ nav{
 
 .edit-form input, select{
     height: 25px;
+}
+
+.edit-form input{
+    padding-left: 10px;
 }
 
 .save-button {
