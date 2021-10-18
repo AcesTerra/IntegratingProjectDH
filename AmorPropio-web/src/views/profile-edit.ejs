@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/44355dc707.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/registerStyle.css" />
+    <title>Edicion Perfil</title>
+  </head>
+  <body>
+    <%- include("partials/header") %>
+    <main>
+      <form action="/user/profile-edit?_method=PUT" method="POST" class="registration" enctype="multipart/form-data">
+        <label class="registration_text">Informacion general</label>
+        <% if(locals.errors && errors.name) {%>
+        <p class="feedback"><%= errors.name.msg %></p>
+        <% } %>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Ingresa tu nombre"
+          class="form_field"
+          value="<%= user.name %>"
+        />
+        <% if(locals.errors && errors.lastName) {%>
+        <p class="feedback"><%= errors.lastName.msg %></p>
+        <% } %>
+        <input
+          type="text"
+          name="lastName"
+          id="lasName"
+          placeholder="Ingresa tu apellido"
+          class="form_field"
+          value="<%= user.lastName %>"
+        />
+        <% if(locals.errors && errors.email) {%>
+        <p class="feedback"><%= errors.email.msg %></p>
+        <% } %>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Ingresa tu correo"
+          class="form_field"
+          value="<%= user.email %>"
+        />
+        
+        <label class="registration_text">Cambia tu foto de perfil</label>
+        <% if(locals.errors && errors.profile_picture) {%>
+            <p class="feedback"><%= errors.profile_picture.msg %></p>
+            <% } %>
+        <input
+          type="file"
+          name="profile_picture"
+          id="profile_picture"
+          class="profile_picture"
+        />
+
+        <button type="submit" class="submit_button">Enviar</button>
+      </form>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>
