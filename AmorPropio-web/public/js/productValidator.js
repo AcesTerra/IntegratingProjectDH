@@ -2,7 +2,6 @@
 let errors = []
 let formulario = document.querySelector('form.edit-form')
 formulario.addEventListener('submit', function(event){
-    event.preventDefault()
     let ulErrors = document.querySelector('.errores ul')
     ulErrors.innerHTML = ""
 
