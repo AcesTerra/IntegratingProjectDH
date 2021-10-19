@@ -38,7 +38,7 @@
         <input
           type="text"
           name="lastName"
-          id="lasName"
+          id="lastName"
           placeholder="Ingresa tu apellido"
           class="form_field"
           value="<%= locals.old && old.lastName %>"
@@ -88,7 +88,11 @@
 
         <button type="submit" class="submit_button">Enviar</button>
       </form>
+      <section class="errores">
+        <ul></ul>
+      </section>
     </main>
+    <script src="/js/registerValidator.js"></script>
     <%- include("partials/footer") %>
   </body>
 </html>

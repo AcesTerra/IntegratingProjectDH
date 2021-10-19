@@ -23,6 +23,10 @@
       <p class="feedback"><%= errors.email.msg %></p>
       <br />
       <% } %>
+      <% if(locals.errors && errors.pwd) {%>
+        <p class="feedback"><%= errors.pwd.msg %></p>
+        <br />
+        <% } %>
       <form action="/user/login" method="POST" class="login">
         <input
           type="email"
@@ -42,7 +46,12 @@
         />
         <button type="submit" class="submit_button">Iniciar sesión</button>
       </form>
+      <section class="errores">
+        <ul></ul>
+      </section>
     </main>
+    <script src="/js/loginValidator.js"></script>
+
     <%- include("partials/footer") %>
   </body>
 </html>

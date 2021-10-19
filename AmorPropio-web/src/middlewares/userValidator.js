@@ -5,9 +5,11 @@ const {check} = require('express-validator');
 
 const validator = [
     check('name')
-    .notEmpty().withMessage("Falta datos por llenar").bail(),
+    .notEmpty().withMessage("Falta datos por llenar").bail()
+    .isLength({min:2}).withMessage('Debe tener al menos 2 caracteres'),
     check('lastName')
-    .notEmpty().withMessage("Falta datos por llenar").bail(),
+    .notEmpty().withMessage("Falta datos por llenar").bail()
+    .isLength({min:2}).withMessage('Debe tener al menos 2 caracteres'),
     check('email')
     .notEmpty().withMessage('Falta datos por llenar').bail()
     .isEmail().withMessage('Ingrese e-mail valido'),

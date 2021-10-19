@@ -22,57 +22,65 @@
       <div class="edit-product">
         <h1><%= product.name %></h1>
         <% if(locals.errors) {%>
-          <p class="feedback">Hay datos vacios en el formulario</p>
-          <% } %>
-        <form action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="edit-form">
-          
-            <div class="product-info">
-              <label for="name">Nombre Producto:</label>  
-            <input type="text" name="name" value="<%= product.name %>"/>
-            </div>
+        <p class="feedback">Hay datos vacios en el formulario</p>
+        <% } %>
+        <form
+          action="/products/<%= product.id %>?_method=PUT"
+          method="POST"
+          enctype="multipart/form-data"
+          class="edit-form"
+        >
+          <div class="product-info">
+            <label for="name">Nombre Producto:</label>
+            <input type="text" name="name" id="name" value="<%= product.name %>" />
+          </div>
 
-            <div class="product-info">
-              <label for="category">Categoria:</label>
+          <div class="product-info">
+            <label for="category">Categoria:</label>
             <select name="category" id="category">
               <option value="">Elige</option>
               <option value="1">Inicio</option>
               <option value="2">Destacados</option>
               <option value="3">Recomendados</option>
             </select>
-            </div>
+          </div>
 
-            <div class="product-info">
-              <label for="colors">Colores:</label>
-            <input type="text" name="colors" value="<%= product.colors %>"/>
-            </div>
-          
-            <div class="product-info">
-              <label for="price">Precio del producto:</label>
-            <input type="text" name="price" value="<%= product.price %>"/>
-            </div>  
+          <div class="product-info">
+            <label for="colors">Colores:</label>
+            <input type="text" name="colors" id="colors" value="<%= product.colors %>" />
+          </div>
 
-            <div class="product-info">
-              <label for="description">Descripcion:</label>
-            <textarea name="description" id="description"><%= product.description %></textarea>
-            </div>
-          
-            <div class="product-info">
-              <label for="image">Agregar imagen:</label>
+          <div class="product-info">
+            <label for="price">Precio del producto:</label>
+            <input type="text" name="price" id="price" value="<%= product.price %>" />
+          </div>
+
+          <div class="product-info">
+            <label for="description">Descripcion:</label>
+            <textarea name="description" id="description">
+<%= product.description %></textarea
+            >
+          </div>
+
+          <div class="product-info">
+            <label for="image">Agregar imagen:</label>
             <input
               type="file"
               name="image"
               id="image"
               accept="image/png, image/jpeg"
             />
-            </div>
-          
-            
+          </div>
 
-            <button type="submit" class="save-button">Guardar Producto</button>
-
+          <button type="submit" class="save-button">Guardar Producto</button>
         </form>
+        <section class="errores">
+          <ul></ul>
+        </section>
       </div>
     </main>
+    <script src="/js/productValidator.js"></script>
+
     <%- include("partials/footer") %>
   </body>
 </html>

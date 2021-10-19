@@ -32,7 +32,7 @@
         >
           <div class="product-info">
             <label for="name">Nombre Producto:</label>
-            <input type="text" name="name" value="<%= locals.old && old.name %>"/>
+            <input type="text" name="name" id="name" value="<%= locals.old && old.name %>"/>
           </div>
 
           <div class="product-info">
@@ -48,13 +48,18 @@
 
           <div class="product-info">
             <label for="price">Colores:</label>
-          <input type="text" name="colors" value="<%= locals.old && old.colors %>" />
+          <input type="text" name="colors" id="colors" value="<%= locals.old && old.colors %>" />
           </div>
 
 
           <div class="product-info">
             <label for="price">Precio del producto:</label>
-            <input type="text" name="price" value="<%= locals.old && old.price %>" />
+            <input type="text" name="price" id="price" value="<%= locals.old && old.price %>" />
+          </div>
+
+          <div class="product-info">
+            <label for="desc">Descripcion:</label>
+            <textarea name="description" id="description" value="<%= locals.old && old.description %>"></textarea>
           </div>
           
           <div class="product-info">
@@ -66,15 +71,17 @@
               accept="image/png, image/jpeg"
             />
           </div>
-          <div class="product-info">
-            <label for="desc">Descripcion:</label>
-            <textarea name="description" id="description" value="<%= locals.old && old.description %>"></textarea>
-          </div>
+         
           <button type="submit" class="save-button">Guardar Producto</button>
 
         </form>
+        <section class="errores">
+          <ul></ul>
+        </section>
       </div>
     </main>
+    <script src="/js/productValidator.js"></script>
+
     <%- include("partials/footer") %>
   </body>
 </html>
