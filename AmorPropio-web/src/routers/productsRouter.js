@@ -37,14 +37,14 @@ var upload = multer({
 router.get('/', productsController.all);
 
 /*** CREATE ONE PRODUCT ***/
-router.get('/create', authMiddleware,productsController.create);
+router.get('/create', authMiddleware, productsController.create);
 router.post('/', upload.single("image"), productValidator,productsController.store)
 
 /*** GET ONE PRODUCT ***/ 
 router.get('/:id', productsController.detail);
 
 /*** EDIT ONE PRODUCT ***/
-router.get('/edit/:id', productsController.edit);
+router.get('/edit/:id', authMiddleware, productsController.edit);
 router.put('/:id', upload.single("image"), productValidator ,productsController.update);
 
 /*** DELETE ONE PRODUCT ***/
