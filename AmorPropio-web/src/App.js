@@ -2,9 +2,13 @@
 const express = require('express');
 const path = require('path');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
+const cors = require('cors')
 const mainRouter = require("./routers/mainRouter")
 const productsRouter = require('./routers/productsRouter')
 const userRouter = require('./routers/userRouter')
+const usersAPIRouter = require('./routers/api/userRouter')
+const productAPIRouter = require('./routers/api/productRouter')
+
 const session = require('express-session');
 const isUserLogged = require('./middlewares/userLogged')
 
@@ -16,6 +20,7 @@ const PORT = process.env.PORT || 8080
 
 // ************ Middlewares - (don't touch) ************
 app.use(express.static(path.join(__dirname, '../public')));  // Define que las busquedas siempre iniciara en public 
+app.use(cors())
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
 app.use(session({secret:'NYANCAT'}))
@@ -28,7 +33,9 @@ app.set("views", "./src/views")
 // ************ Route System require and use() ************
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
-app.use('/user', userRouter)
+app.use('/user', userRouter);
+app.use(usersAPIRouter);
+app.use(productAPIRouter);
 
 app.listen(PORT, () => {
     console.log("Server running on port: " + PORT)
